@@ -1,0 +1,38 @@
+.turno {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.info-turno {
+    margin-bottom: 10px;
+}
+
+.btn-cancelar {
+    float: right;
+}
+header {
+    text-align: left;
+    font-family: Arial Black;
+    font-weight: bold;
+    font-size: 30px;
+    color: #2c9c76;
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    background-color: #96c7b8;
+    padding: 5%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    border-color: #000;
+    border: 4px;
+    animation: changeColor 10s infinite;
+  }
+
+  @keyframes changeColor {
+    0% { background-color: #249c74; }
+    33% { background-color: #5ea992; }
+    66% { background-color: #96c7b8; }
+    100% { background-color: #249c74; }
+  }
+
+#contenedorbuscador {margin-top: 10px; margin-bottom: 20px;}
