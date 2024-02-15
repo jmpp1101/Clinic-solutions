@@ -43,3 +43,7 @@ text-align: center;
 justify-content: center;}
 #buscadorpacientes {margin:5px;}
 #botonbusqueda {margin:5px;}
+
+.card {
+  margin-bottom: 10px; /* Agrega 10px de margen inferior */
+}
