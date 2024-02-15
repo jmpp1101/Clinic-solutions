@@ -1,18 +1,5 @@
 const formulario = document.querySelector('#buscadorpacientes');
 
-const filtrar = () => {
-    console.log(formulario.value);
-    const texto = formulario.value.toLowerCase();
-    for (let medico of medicos) {
-        let nombre = medico.nombre.toLowerCase();
-        if (nombre.includes(texto)) {
-            // Aquí puedes realizar alguna acción con el médico que coincide
-            // Por ejemplo, mostrarlo en algún lugar de la interfaz
-            console.log(medico);
-        }
-    }
-};
-
 let containerTurnos = document.getElementById('turnos');
 
 // Parsea los turnos desde el almacenamiento local
@@ -95,4 +82,29 @@ turnos.forEach(function(turno) {
     div.appendChild(infoDiv);
     div.appendChild(cancelarBtn);
     containerTurnos.appendChild(div);
+});
+
+
+const filtroForm = document.getElementById('buscadorpacientes');
+filtroForm.addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita que el formulario se envíe y la página se recargue
+    
+    const filtroInput = document.getElementById('filtroInput');
+    const filtroTexto = filtroInput.value.toLowerCase(); // Obtén el texto de búsqueda en minúsculas
+
+    const turnosFiltrados = turnos.filter(function(turno) {
+        // Verifica si el texto de búsqueda coincide con el médico, la especialidad o el paciente del turno
+        return turno.medico.toLowerCase().includes(filtroTexto) ||
+               turno.especialidad.toLowerCase().includes(filtroTexto) ||
+               turno.paciente.toLowerCase().includes(filtroTexto);
+    });
+
+    // Limpia el contenedor de turnos
+    containerTurnos.innerHTML = '';
+
+    // Vuelve a dibujar solo los turnos filtrados
+    turnosFiltrados.forEach(function(turno) {
+        // Código para crear y mostrar cada turno
+        // (puedes reutilizar la parte del código que ya tienes)
+    });
 });
