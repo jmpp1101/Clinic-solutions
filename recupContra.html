@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar contraseña | Clínica del Código</title>
+    <link rel="stylesheet" href="recupContra.css">
+    <link
+    rel="icon"
+    type="image/x-icon"
+    href="/assets/Clinic-solution-logo2.jpeg"
+  />
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="contenedor">
+        <h2 class="title">Recuperar contraseña</h2>
+        <div class="contenedorForm" id="contForm">
+            <div class="parrafo">
+                <p>Si olvidaste tu contraseña ingresa el correo asosiado a tu cuenta o tu DNI para recuperarla.
+                    <br>
+                Se te enviará una nueva contraseña para ingresar, luego la puedes cambiar</p>
+            </div>
+            <div class="datos">
+                <form class="formRecuperacion" id="formRec">
+                    <label for="datoUsuario">Ingresa tu correo electrónico o DNI</label>
+                    <input id="datoUsuario" type="text">
+    
+                    <input id="recuperar_btn" type="submit" value="Recuperar contraseña">
+                    <span class="error" id="errorMail">No existe una cuenta con el correo electrónico ingresado</span>
+                    <span class="error" id="errorDNI">No existe una cuenta con el DNI ingresado</span>
+                </form>
+            </div>
+        </div>
+
+        <div class="contenedorMensaje" id="contMensaje">
+            <div class="mensajeRecuperacion">
+                <p>Hemos enviado un mail al correo asociado a tu cuenta. No olvides revisar tu correo no deseado.</p>
+                <br>
+                <p>Tienes 30 minutos para recuperar tu cuenta, pasado ese tiempo el mail será inválido y deberás reiniciar el proceso de recuperación</p>
+
+            </div>
+            <a href="login.html" id="volver_btn" type="submit">Volver a Ingresar</a>
+        </div>
+    </div>
+
+    <script src="./registro-ingresoJS/controladoresVistas/recupContra.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in | Clínica del código</title>
+    <link rel="stylesheet" href="signin.css">
+    <link
+    rel="icon"
+    type="image/x-icon"
+    href="/assets/Clinic-solution-logo2.jpeg"
+  />
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="title" id="titlePac">
+            <h2 class="subtitle" id="subtitlePac">Registro de Pacientes</h2>
+            <p>Registrándote accedes a nuestro más completo servicio de manera rápida y sencilla</p>
+        </div>
+
+        <div class="title" id="titleMed">
+            <h2 class="subtitle" id="subtitleMed">Registro del Personal Médico</h2>
+            <p>Para brindar tus servicios a quienes lo necesitan de forma ordenada y rápida</p>
+        </div>
+
+        <div class="parte2">
+            <form class="formPacientes" id="formPac">
+                <div class="datos">
+                    <div class="dato">
+                        <label for="apellido">Apellido</label>
+                        <input id="apellido" type="text" placeholder="Apellido">
+
+                    </div>
+                    <div class="dato">
+                        <label for="nombre">Nombre</label>
+                        <input id="nombre" type="text" placeholder="Nombre" required>
+                    </div>
+                    <div class="dato">
+                        <label for="dni">Documento Nacional de Identidad</label>
+                        <input id="dni" type="number" placeholder="DNI" required>
+                    </div>
+                    <div class="dato">
+                        <label for="fechaNac">Fecha de nacimiento</label>
+                        <input id="fechaNac" type="date" required>
+                    </div>
+                    <div class="dato">
+                        <label for="obraSocial">Indique la obra social que posee</label>
+                        <select name="obrasSociales" id="obraSocial" required>
+                            <option value="defecto">Selecciona una opción</option>
+                            <option value="No">No poseo obra social</option>
+                            <option value="os1">Obra social 1</option>
+                            <option value="os2">Obra social 2</option>
+                            <option value="os3">Obra social 3</option>
+                        </select>
+                    </div>
+                    <div class="dato">
+                        <label for="numAfil">Indique número de afiliado</label>
+                        <input id="numAfil" type="text" placeholder="N° de Afiliado" required>
+                    </div>
+                    <div class="dato">
+                        <label for="contacto">Indique número de teléfono</label>
+                        <input id="contacto" type="tel" placeholder="'N° de área + xxxxxxx'" required>
+                    </div>
+                </div>
+                <div class="datos2">
+                    <div class="dato">
+                        <label for="correo1">Correo electrónico</label>
+                        <input id="correo1" type="email" placeholder="Correo electrónico" required>
+                    </div>
+                    <div class="dato">
+                        <label for="correo2">Confirmar correo electrónico</label>
+                        <input id="correo2" type="email" placeholder="Confirmar correo electrónico" required>
+                    </div>
+                    <div class="dato">
+                        <label for="contra1">Contraseña</label>
+                        <input id="contra1" type="password" placeholder="Contraseña" required>
+                    </div>
+                    <div class="dato">
+                        <label for="contra2">Repetir contraseña</label>
+                        <input id="contra2" type="password" placeholder="Repetir contraseña" required>
+                    </div>
+                </div>
+
+                <p>Todos los campos son obligatorios</p>
+
+                <div class="botones">
+                    <div class="primer_btn">
+                        <input type="submit" id="registrar_btn" value="Registrarme">
+                    </div>
+                    <div class="segundo_btn">
+                        <a href="login.html"><span>Ya estoy registrado</span></a>
+                    </div>
+                    <!-- <div class="tercer_btn">
+                        <a href="#" id="registroPersonal" onclick="mostrarForm('formMed')"><span>Registro del personal</span></a>
+                    </div> -->
+                </div>
+
+            </form>
+
+            <form class="formMedicos" id="formMed">
+                <div class="datos">
+                    <div class="dato">
+                        <label for="apellidoM">Apellido</label>
+                        <input id="apellidoM" type="text" placeholder="Apellido">
+
+                    </div>
+                    <div class="dato">
+                        <label for="nombreM">Nombre</label>
+                        <input id="nombreM" type="text" placeholder="Nombre">
+                    </div>
+                    <div class="dato">
+                        <label for="dniM">Documento Nacional de Identidad</label>
+                        <input id="dniM" type="number" placeholder="DNI">
+                    </div>
+                    <div class="dato">
+                        <label for="fechaNacM">Fecha de nacimiento</label>
+                        <input id="fechaNacM" type="date">
+                    </div>
+                    <div class="dato">
+                        <label for="matriculaM">Indique matrícula profesional</label>
+                        <input id="matriculaM" type="text" placeholder="N° de Matrícula">
+                    </div>
+                    <div class="dato">
+                        <label for="contactoM">Indique número de teléfono</label>
+                        <input id="contactoM" type="tel" placeholder="'N° de área + xxxxxxx'">
+                    </div>
+
+
+                    <div class="dato">
+                        <label for="correo1M">Correo electrónico</label>
+                        <input id="correo1M" type="email" placeholder="Correo electrónico">
+                    </div>
+                    <div class="dato">
+                        <label for="correo2M">Confirmar correo electrónico</label>
+                        <input id="correo2M" type="email" placeholder="Confirmar correo electrónico">
+                    </div>
+                    <div class="dato">
+                        <label for="contra1M">Contraseña</label>
+                        <input id="contra1M" type="password" placeholder="Contraseña">
+                    </div>
+                    <div class="dato">
+                        <label for="contra2M">Repetir contraseña</label>
+                        <input id="contra2M" type="password" placeholder="Repetir contraseña">
+                    </div>
+                </div>
+
+                <p>Todos los campos son obligatorios</p>
+
+                <div class="botones">
+                    <div class="primer_btn">
+                        <input type="submit" id="registrarM_btn" value="Registrarme">
+                    </div>
+                    <div class="segundo_btn">
+                        <a href="login.html"><span>Ya estoy registrado</span></a>
+                    </div>
+                    <!-- <div class="tercer_btn">
+                        <a href="#" id="volver" onclick="mostrarForm('formPac')"><span>Volver al registro de pacientes</span></a>
+                    </div> -->
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+    <script src="./registro-ingresoJS/controladoresVistas/signin.js"></script>
+</body>
+
+</html>

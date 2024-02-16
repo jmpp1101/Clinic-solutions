@@ -1,0 +1,253 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #5ea992;
+}
+
+/* Paleta de colores elegida
+.color1 { #2c9c76 };
+.color2 { #a6dcc9 };
+.color3 { #249c74 };
+.color4 { #5ea992 };
+.color5 { #96c7b8 };
+******Agrego color nuevo a la paleta: #999;
+*/
+
+
+/*General contenedor Registrarse*/
+.contenedor-infoyform{
+    display: flex;
+    border-radius: 20px;
+    box-shadow: 0 15px 15px rgba(0,0,0, .1);
+    height: 500px;
+    width: 60%;
+    margin: 10px;
+    border: solid thin rgba(0,0,0, .1);
+
+    transition: all is ease;
+}
+
+/***********Lado izquierdo********************/
+/*General Registrarse*/
+.informacion{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: #a6dcc9;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.info-hijos{
+    width: 100%;
+    padding: 0 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.info-hijos h2{
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.info-hijos p{
+    margin: 15px 0;
+    color: #555;
+}
+
+.botones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#registrarme_btn{
+    font-size: 0.9rem;
+    text-decoration: none;
+    margin: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    width: fit-content;
+    align-items: center;
+
+    background-color: #249c74;
+    outline: none;
+    border: solid 2px #249c74; 
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    transition: background-color .3 ease;
+}
+
+#ingresar_btn{
+    background-color: transparent;
+    outline: none;
+    border: solid 2px #999; 
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color .3 ease;
+}
+
+/*Efecto Hover Botón Registrarse e Ingresar*/
+#registrarme_btn:hover{
+    background-color: white;
+    border: none;
+    color: #5ea992;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+}
+
+#ingresar_btn:hover{
+    background-color: #999;
+    border: none;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+}
+
+/***********Lado derecho********************/
+.informacion-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid thin #f8f8f8;
+    width: 60%;
+    text-align: center;
+    background-color: #f8f8f8;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.info-form-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#ingresa{
+    padding: 0 0 20px 0;
+    font-size: 2rem;
+}
+
+.parrafosMostrar{
+    width: 70%;
+}
+
+#parrafoMedico{
+    display: none;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+    margin: 0;
+}
+
+/*Input Usuario y Contraseña*/
+.form label{
+    margin-bottom: 15px;
+}
+
+.form label, .form input{
+    width: 80%;
+}
+
+label>input[id="usuario"],
+label>input[id="contra"]{
+    padding: 0 10px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+}
+
+label input[id="usuario"],
+label input[id="contra"]{
+    padding: 0 10px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+}
+
+/*Botones opción Paciente o Médico*/
+.perfil{
+    background-color: white;
+    height: 10vh;
+    width: 70%;
+    margin-bottom: 15px;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    
+    overflow: hidden;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+label[for="paciente"], label[for="medico"]{
+    /* display: block; */
+    padding-top: 3vh;
+    height: 180px;
+    width: 50%;
+    background: linear-gradient(
+        to bottom,
+        white 0, white 90px,
+        #249c74 90px, #249c74 180px
+    );
+    
+    color: #5ea992;
+    transition: 0.5s;
+}
+
+input:checked + label{
+    cursor: pointer;
+    background-position: 0 -90px;
+    color: white;
+    transition: 0.7s;
+}
+
+label[for="paciente"]:hover, label[for="medico"]:hover{
+    cursor: pointer;
+}
+
+
+/*Botón recuperar contraseña*/
+#recupContra{
+    font-size: 0.8rem;
+}
+
+/*Botón ingresar*/
+#ingresar_btn{
+    width: 10vw;
+    margin: 20px 20px;
+}
+
+/*Error*/
+.error{
+    display: none;
+    color: red;
+    font-size: 0.8rem;
+}

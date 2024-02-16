@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Clínica del código</title>
+    <link rel="stylesheet" href="login.css">
+    <link
+    rel="icon"
+    type="image/x-icon"
+    href="/assets/Clinic-solution-logo2.jpeg"
+  />
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="contenedor-infoyform">
+        <div class="informacion">
+            <div class="info-hijos">
+                <h2>Bienvenido</h2>
+                <p>Si aún no formas parte de nuestra clínica y quieres ser atendido por nuestro personal médico por
+                    favor regístrate</p>
+                <div class="botones">
+                    <a href="signin.html?boton=registro_pacientes" id="registrarme_btn">Registrarme como paciente</a>
+                    <a href="signin.html?boton=registro_medicos" id="registrarme_btn">Registrarme como médico</a>
+                </div>
+            </div>
+        </div>
+        <div class="informacion-form">
+            <div class="info-form-hijos">
+                <div class="info-form-title">
+                    <h2 id="ingresa">Ingresa a la plataforma</h2>
+                    <p class="parrafosMostrar" id="parrafoPaciente">Inicia sesión en tu cuenta personal para acceder a servicios médicos y gestionar citas</p>
+                    <p class="parrafosMostrar" id="parrafoMedico">Ingresa a la plataforma con tus datos de personal de la clínica</p>
+                </div>
+
+                <form class="form" id="formulario">
+                    <div class="perfil">
+
+                        <input type="radio" id="paciente" name="perfil" value="1" onclick="mostrarParrafo('parrafoPaciente')" checked>
+                        <label for="paciente">Paciente</label>
+
+                        <input type="radio" id="medico" name="perfil" value="2" onclick="mostrarParrafo('parrafoMedico')">
+                        <label for="medico">Médico</label>
+
+                    </div>
+
+                    <label>
+                        <input id="usuario" type="text" placeholder="DNI">
+                  </label>
+                    <label>
+                        <input id="contra" type="password" placeholder="Contraseña">
+                    </label>
+
+                    <a href="recupContra.html" id="recupContra"><span>¿Olvidaste tu contraseña?</span></a>
+
+                    <input type="submit" id="ingresar_btn" value="Ingresar">
+
+                </form>
+                <span class="error" id="errorLogIn">Usuario o contraseña incorrecto</span>
+                <span class="error" id="errorDNI">Ingrese un DNI válido</span>
+                <span class="error" id="errorMat">Ingrese una matrícula válida</span>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="./registro-ingresoJS/controladoresVistas/login.js"></script>
+</body>
+
+</html>
