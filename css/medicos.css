@@ -1,0 +1,37 @@
+header {
+    text-align: left;
+    font-family: Arial Black;
+    font-weight: bold;
+    font-size: 30px;
+    color: #2c9c76;
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    background-color: #96c7b8;
+    padding: 5%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    border-color: #000;
+    border: 4px;
+    animation: changeColor 10s infinite;
+    margin-bottom: 20px;
+  }
+
+  @keyframes changeColor {
+    0% { background-color: #249c74; }
+    33% { background-color: #5ea992; }
+    66% { background-color: #96c7b8; }
+    100% { background-color: #249c74; }
+  }
+
+  .card {
+    margin: 10px; /* Agrega 10px de margen inferior */
+    opacity: 0; /* Inicialmente, las tarjetas tienen opacidad 0 */
+    transform: translateY(-20px); /* Inicialmente, las tarjetas se mueven hacia arriba 20px */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transición suave de opacidad y transformación */
+  }
+  .visible {
+    opacity: 1 !important; /* Cuando la clase 'visible' está presente, las tarjetas tienen opacidad 1 */
+    transform: translateY(0) !important; /* Cuando la clase 'visible' está presente, las tarjetas vuelven a su posición original */
+  }
+
+h1 {margin: 10px;}
