@@ -1,0 +1,211 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #5ea992;
+}
+
+/* Paleta de colores elegida
+.color1 { #2c9c76 };
+.color2 { #a6dcc9 };
+.color3 { #249c74 };
+.color4 { #5ea992 };
+.color5 { #96c7b8 };
+******Agrego color nuevo a la paleta: #999;
+******Agrego color nuevo a la paleta: #f8f8f8;
+*/
+
+.contenedor {
+    height: 550px;
+    width: 60%;
+
+    margin: 10px;
+    border-radius: 20px;
+    border: solid thin rgba(0, 0, 0, .1);
+    box-shadow: 0 15px 15px rgba(0, 0, 0, .1);
+
+    transition: all is ease;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/*1era parte*/
+.title{
+    background-color: #a6dcc9;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: solid thin #a6dcc9;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.subtitle {
+    padding: 30px 20px 30px 40px;
+    font-size: 2rem;
+
+    width: 50%;
+    display: flex;
+
+}
+
+.title >p{
+    padding: 3% 8% 2% 8%;
+    font-size: 1.2rem;
+
+    text-align: center;
+    display: flex;
+    width: 50%;
+}
+
+/*2da parte*/
+.parte2{
+    background-color: #f8f8f8;
+    height: 80%;
+
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+/**************************Pacientes****************************/
+/* .formPacientes{
+    display: none;
+} */
+
+.formPacientes, .formMedicos {
+    background-color: #f8f8f8;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    padding: 3%;
+}
+
+/*Inputs Datos del nuevo usuario*/
+.datos, .datos2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.dato{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    width: 50%;
+    padding-right: 3%;
+    padding-left: 3%;
+}
+
+.formPacientes label, .formMedicos label {
+    font-size: 0.9rem;
+    padding: 0 10px 10px 10px;
+}
+
+.formPacientes label,
+.formPacientes input,
+.formMedicos label,
+.formMedicos input{
+    width: 50%;
+}
+
+.formPacientes input,
+.formMedicos input{
+    height: 3vh;
+    padding: 10px;
+}
+
+#obraSocial{
+    height: 3vh;
+}
+/*Parrafo aclaración*/
+.formPacientes>p,
+.formMedicos>p{
+    padding-top: 3%;
+    padding-left: 5%;
+    font-size: 0.9rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/*Botones*/
+.botones{
+    margin-top: 2%;
+    padding-left: 5%;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.botones>div{
+    width: 50%;
+}
+
+/*Botón registrarse*/
+#registrar_btn, 
+#registrarM_btn{
+    background-color: transparent;
+    border: solid 2px #999;
+    border-radius: 20px;
+
+    width: 10vw;
+    height: 5vh;
+    padding-top: 1%;
+    padding-bottom: 1%;
+
+    color: #333;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color .3 ease;   
+}
+
+/*Efecto Hover Botón Registrarse*/
+#registrar_btn:hover,
+#registrarM_btn:hover {
+    background-color: #999;
+    border: none;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+    width: 10vw;
+}
+
+/*Botones*/
+.segundo_btn{
+    font-size: 0.8rem;
+}
+/*Botón Registro del personal*/
+.tercer_btn{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#registroPersonal{
+    padding-right: 10%;
+}
+
+#registroPersonal > span,
+#volver > span{
+    font-size: 0.8rem;
+    width: 100%;
+}
+
+/**************************Médicos****************************/
+.formMedicos{
+    display: none;
+}
+
+#titleMed{
+    display: none;
+}

@@ -1,0 +1,179 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: white;
+}
+
+/* Paleta de colores elegida
+.color1 { #2c9c76 };
+.color2 { #a6dcc9 };
+.color3 { #249c74 };
+.color4 { #5ea992 };
+.color5 { #96c7b8 };
+******Agrego color nuevo a la paleta: #999;
+******Agrego color nuevo a la paleta: #f8f8f8;
+*/
+
+.contenedor {
+    width: 70%;
+    height: max-content;
+    margin: 0;
+
+    transition: all is ease;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 2rem;
+    background-color: #f8f8f8;
+    padding-left: 40px;
+    padding-top: 30px;
+    margin-top: 30px;
+}
+
+#contForm{
+    /* display: none; */
+    background-color: #f8f8f8;
+}
+
+/*1era parte*/
+.parrafo{
+    background-color: #f8f8f8;
+    height: 20%;
+
+    display: flex;
+    flex-direction: column;
+ 
+    padding-left: 40px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.parrafo >p{
+    /* padding: 2% 8% 2% 0; */
+    font-size: 1.2rem;
+    text-align: start;
+}
+
+/*2da parte*/
+
+/**************************Recuperar contraseña****************************/
+
+.formRecuperacion{
+    /* background-color: #f8f8f8; */
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding-left: 40px;
+}
+
+/*Inputs Datos del nuevo usuario*/
+.datos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.datoUsuario{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    width: 50%;
+    padding-right: 3%;
+    padding-left: 3%;
+}
+
+.formRecuperacion label {
+    font-size: 0.9rem;
+    padding-bottom: 10px;
+}
+
+.formRecuperacion input, .boton{
+    height: 3vh;
+    padding: 10px;
+}
+
+.formRecuperacion label,
+#datoUsuario{
+    width: 50%;
+}
+
+
+/*Botón recuperar y volver*/
+#recuperar_btn, #volver_btn{
+    background-color: transparent;
+    border: solid 2px #999;
+    border-radius: 20px;
+    
+    width:fit-content;
+    height: 5vh;
+    margin-top: 3%;
+    padding-top: 0.5%;
+    padding-bottom: 1%;
+    margin-bottom: 3%;
+    
+    color: #333;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color .3 ease;   
+}
+
+/*Efecto Hover Botón Recuperar y Volver*/
+#recuperar_btn:hover,
+#volver_btn:hover{
+    background-color: #999;
+    border: none;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+    width: fit-content;
+    height: 5vh;
+    padding-top: 0.5%;
+    padding-bottom: 1%;
+}
+
+/***********************Luego de hacer click en Recuperar contraseña*********************/
+#contMensaje{
+    display: none;
+    padding-bottom: 30px;
+    background-color: #f8f8f8;
+}
+.mensajeRecuperacion{
+    padding-top: 3%;
+    padding-left: 5%;
+    padding-bottom: 30px;
+    
+    width: 80%;
+
+    font-size: 0.9rem;
+    font-weight: bold;
+    font-style: italic;
+
+    
+}
+
+#volver_btn{
+    margin-left: 5%;
+    font-size: 0.9rem;
+    padding: 1%;
+    text-decoration: none;
+}
+
+/*************************ERROR***************************/
+.error{
+    display: none;
+    color: red;
+    font-size: 0.8rem;
+}
