@@ -1,81 +1,79 @@
 // Datos de ejemplo de usuarios pendientes
-let usuariosPendientes = [
+let usuariosIniciales = [
     { nombre: "Juan", apellido: "Pérez", dni: "12345678" },
     { nombre: "María", apellido: "Gómez", dni: "98765432" },
     { nombre: "Carlos", apellido: "López", dni: "54321678" }
 ];
 
 // Datos de ejemplo de usuarios definitivos
-let usuariosDefinitivos = [
+let usuariosDefinitivosIniciales = [
     { nombre: "Lucía", apellido: "Martínez", dni: "12345678" },
-    { nombre: "Pedro", apellido: "García", dni: "98765432" }
+    { nombre: "Pedro", apellido: "García", dni: "98765432" },
+    { nombre: "Prueba", apellido: "Prueba", dni: "9"}
 ];
 
-// Función para llenar la tabla de usuarios pendientes
-function llenarTablaPendientes() {
-    let tabla = document.getElementById("tablaUsuariosPendientes");
-    let tbody = tabla.querySelector("tbody");
 
-    tbody.innerHTML = "";
+//Inicializo arrays auxiliares vacíos
+let usuariosDefinitivos = []
+let usuariosPendientes = []
 
-    usuariosPendientes.forEach(usuario => {
-        let fila = document.createElement("tr");
-        fila.innerHTML = `
-            <td>${usuario.nombre}</td>
-            <td>${usuario.apellido}</td>
-            <td>${usuario.dni}</td>
-            <td>
-                <button class="btn-aceptar">Aceptar</button>
-                <button class="btn-rechazar">Rechazar</button>
-            </td>
-        `;
-        tbody.appendChild(fila);
-    });
+
+//Funcion para definir arrays vacios en LS
+function iniciarLS(){
+    let usuariosPendientesLS = JSON.parse(localStorage.getItem('usuariosPendientes')) || [];
+    let usuariosDefinitivosLS = JSON.parse(localStorage.getItem('usuariosDefinitivos')) || [];
+    
+    if(usuariosPendientesLS.length === 0){
+        localStorage.setItem('usuariosPendientes', JSON.stringify(usuariosIniciales));
+        usuariosPendientes = usuariosIniciales;
+    } else {
+        usuariosPendientes = usuariosPendientesLS;
+    }
+
+    if(usuariosDefinitivosLS.length === 0){
+        localStorage.setItem('usuariosDefinitivos', JSON.stringify(usuariosDefinitivosIniciales));
+        usuariosDefinitivos = usuariosDefinitivosIniciales;
+    } else {
+        usuariosDefinitivos = usuariosDefinitivosLS;
+    }
 }
 
-// Función para llenar la tabla de usuarios definitivos
-function llenarTablaDefinitivos() {
-    let tabla = document.getElementById("tablaUsuariosDefinitivos");
-    let tbody = tabla.querySelector("tbody");
+iniciarLS();
 
-    tbody.innerHTML = "";
-
-    usuariosDefinitivos.forEach(usuario => {
-        let fila = document.createElement("tr");
-        fila.innerHTML = `
-            <td>${usuario.nombre}</td>
-            <td>${usuario.apellido}</td>
-            <td>${usuario.dni}</td>
-        `;
-        tbody.appendChild(fila);
-    });
+// Función para guardar los datos en localStorage
+function guardarEnLocalStorage() {
+    localStorage.setItem('usuariosPendientes', JSON.stringify(usuariosPendientes));
+    localStorage.setItem('usuariosDefinitivos', JSON.stringify(usuariosDefinitivos));
 }
 
 // Función para aceptar un usuario pendiente
 function aceptarUsuario(dni) {
     let usuarioPendiente = usuariosPendientes.find(u => u.dni === dni);
     usuariosPendientes = usuariosPendientes.filter(u => u.dni !== dni);
-
+    
     let existencia = usuariosDefinitivos.some(usuario => usuario.dni === dni);
 
     if (existencia) {
         console.log(`Ya existe un usuario con el DNI ${dni}.`);
         alert('No se pudo agregar el usuario a la lista de usuarios');
-        let indiceUsuario = usuariosPendientes.findIndex(usuario => usuario.dni === dni);
-        if (indiceUsuario !== -1) {
-            usuariosPendientes.splice(indiceUsuario, 1);
-            console.log('Usuario eliminado de la lista de pendientes.');
-        }
+        usuariosPendientes = usuariosPendientes.filter(u => u.dni !== dni);
+        // let indiceUsuario = usuariosPendientes.findIndex(usuario => usuario.dni === dni);
+        
+        // if (indiceUsuario === -1) {
+        //     usuariosPendientes.splice(indiceUsuario, 1);
+        //     console.log('Usuario eliminado de la lista de pendientes.');
+            guardarEnLocalStorage();
+            llenarTablaPendientes();
+        //     // llenarTablaDefinitivos();
+            console.log(usuariosPendientes)
+        // }
     } else {
         usuariosDefinitivos.push(usuarioPendiente);
+
         console.log(`Usuario ${usuarioPendiente.dni} aceptado.`);
         console.log(`Se ha agregado al usuario ${dni} a la lista definitiva de usuarios`);
         alert(`Se ha agregado al usuario ${dni} a la lista definitiva de usuarios`);
-        let indiceUsuario = usuariosPendientes.findIndex(usuario => usuario.dni === dni);
-        if (indiceUsuario !== -1) {
-            usuariosPendientes.splice(indiceUsuario, 1);
-            console.log('Usuario eliminado de la lista de pendientes.');
-        }
+        guardarEnLocalStorage();
     }
 
     // Actualizar las tablas después de aceptar un usuario
@@ -89,12 +87,53 @@ function rechazarUsuario(dni) {
     usuariosPendientes.splice(usuarioIndex, 1);
     console.log(`Usuario con DNI ${dni} rechazado.`);
     alert('Usuario eliminado de la lista de pendientes');
+    guardarEnLocalStorage();
 
     // Actualizar la tabla de usuarios pendientes después de rechazar un usuario
     llenarTablaPendientes();
 }
 
+//***********************************************LLENAR TABLAS */
+// Función para llenar la tabla de usuarios pendientes
+function llenarTablaPendientes() {
+    let tabla = document.getElementById("tablaUsuariosPendientes");
+    let tbody = tabla.querySelector("tbody");
+    
+    tbody.innerHTML = "";
+    
+    usuariosPendientes.forEach(usuario => {
+        let fila = document.createElement("tr");
+        fila.innerHTML = `
+        <td>${usuario.nombre}</td>
+        <td>${usuario.apellido}</td>
+        <td>${usuario.dni}</td>
+        <td>
+                <button class="btn-aceptar">Aceptar</button>
+                <button class="btn-rechazar">Rechazar</button>
+            </td>
+        `;
+        tbody.appendChild(fila);
+    });
+}
 
+
+// Función para llenar la tabla de usuarios definitivos
+function llenarTablaDefinitivos() {
+    let tabla = document.getElementById("tablaUsuariosDefinitivos");
+    let tbody = tabla.querySelector("tbody");
+    
+    tbody.innerHTML = "";
+    
+    usuariosDefinitivos.forEach(usuario => {
+        let fila = document.createElement("tr");
+        fila.innerHTML = `
+        <td>${usuario.nombre}</td>
+        <td>${usuario.apellido}</td>
+        <td>${usuario.dni}</td>
+        `;
+        tbody.appendChild(fila);
+    });
+}
 // Llenar las tablas al cargar la página
 document.addEventListener('DOMContentLoaded', function () {
     llenarTablaPendientes();

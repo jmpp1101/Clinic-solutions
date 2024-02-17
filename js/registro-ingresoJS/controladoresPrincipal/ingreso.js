@@ -22,6 +22,7 @@ let administrador = {
 
 let usuarios = [];
 usuarios.push(usuario1, usuario2)
+localStorage.setItem('usuarios', JSON.stringify(usuarios))
 
 
 let form = document.getElementById('formulario');
@@ -64,9 +65,6 @@ form.addEventListener('submit', function (event) {
                 }
             }
             //si no existe entonces no
-
-
-
 
         })
         //Si bandera es positiva, redireccionar y retonar el usuario para que la pagina principal cargue sus datos
