@@ -49,7 +49,7 @@ form.addEventListener('submit', function (event) {
     //Funcion para poder ser redireccionados a la pagina principal dependiendo del perfil del usuario
     if (usuarioIngreso.perfil === PERFIL.MEDICO && usuarioIngreso.usuario === '88888888' && usuarioIngreso.contra === 'anak') {
         console.log('Bienvenido administrador')
-        window.location.href = '/administrador.html';
+        window.location.href = 'administrador.html';
 
     } else {
         let usuarioEncontrado
