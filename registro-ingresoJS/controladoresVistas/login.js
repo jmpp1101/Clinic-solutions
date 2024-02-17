@@ -60,6 +60,7 @@ input.addEventListener('input', function() {
             }
         }
         else{
+            errorDNI.style.display = 'none';
             if (usuario.length < 5 || usuario <= 50000) {
                 errorMat.style.display = 'block';
             }else{
@@ -73,25 +74,6 @@ input.addEventListener('input', function() {
     
     
 });
-
-//Para mostrar u ocultar el mensaje de error en Login
-let denied = document.getElementById('formulario');
-
-denied.addEventListener('submit', function (event) {
-    event.preventDefault()
-    let usuario = document.getElementById('usuario').value;
-    let contra = document.getElementById('contra').value;
-    let errorMsg = document.getElementById('errorLogIn');
-
-    //Control espacios vacíos y contraseña menor a X caracteres
-    if ((usuario === '' && contra === '') || (usuario === '' || contra === '') || (usuario !== '' && contra.length < 4)) {
-        errorMsg.style.display = 'block';
-    }
-    if (errorMsg.style.display == 'block' && usuario != '' && contra.length > 4) {
-        errorMsg.style.display = 'none';
-    }
-})
-
 
 /******************************************************************************************* */
 //Control de formulario completo (PABLO) NO ME FUNCIONA :( 
