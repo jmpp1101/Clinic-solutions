@@ -20,17 +20,16 @@
         <h2 class="title">Recuperar contraseña</h2>
         <div class="contenedorForm" id="contForm">
             <div class="parrafo">
-                <p>Si olvidaste tu contraseña ingresa el correo asosiado a tu cuenta o tu DNI para recuperarla.
+                <p>Si olvidaste tu contraseña ingresa tu DNI para recuperarla.
                     <br>
                 Se te enviará una nueva contraseña para ingresar, luego la puedes cambiar</p>
             </div>
             <div class="datos">
                 <form class="formRecuperacion" id="formRec">
-                    <label for="datoUsuario">Ingresa tu correo electrónico o DNI</label>
+                    <label for="datoUsuario">Ingresa tu DNI</label>
                     <input id="datoUsuario" type="text">
     
                     <input id="recuperar_btn" type="submit" value="Recuperar contraseña">
-                    <span class="error" id="errorMail">No existe una cuenta con el correo electrónico ingresado</span>
                     <span class="error" id="errorDNI">No existe una cuenta con el DNI ingresado</span>
                 </form>
             </div>
@@ -47,6 +46,6 @@
         </div>
     </div>
 
-    <script src="../js/registro-ingresoJS/controladoresVistas/recupContra.js"></script>
+    <script src="../js/registro-ingresoJS/controladoresVistas/recupContra.js" type="module"></script>
 </body>
 </html>

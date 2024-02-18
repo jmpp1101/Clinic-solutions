@@ -6,9 +6,9 @@ let usuariosIniciales = [
 ];
 
 // Datos de ejemplo de usuarios definitivos
-let usuariosDefinitivosIniciales = [
-    { nombre: "Lucía", apellido: "Martínez", dni: "12345678" },
-    { nombre: "Pedro", apellido: "García", dni: "98765432" },
+export let usuariosDefinitivosIniciales = [
+    { nombre: "Lucía", apellido: "Martínez", dni: "123456789" },
+    { nombre: "Pedro", apellido: "García", dni: "987654321" },
     { nombre: "Prueba", apellido: "Prueba", dni: "9"}
 ];
 
