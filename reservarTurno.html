@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Turnos</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h1>Gestión de Turnos</h1>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h2>Agregar Turno</h2>
+                <form id="formAgregarTurno">
+                    <div class="mb-3">
+                        <label for="selectMedico" class="form-label">Médico</label>
+                        <select class="form-select" id="selectMedico">
+                            <option selected>Seleccionar médico</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Paciente</label>
+                        <input type="text" class="form-control" id="inputPaciente" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputFecha" class="form-label">Fecha</label>
+                        <input type="date" class="form-control" id="inputFecha">
+                    </div>
+                    <div class="mb-3">
+                        <label for="selectHora" class="form-label">Hora</label>
+                        <select class="form-select" id="selectHora">
+                            <option selected>Seleccionar hora</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Agregar Turno</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<!-- Bootstrap JS (requerido para los componentes de JavaScript de Bootstrap) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Controlador de vista (UI) -->
+<script src="./registro-ingresoJS/controladoresVistas/turnoView.js"></script>
+</body>
+</html>
