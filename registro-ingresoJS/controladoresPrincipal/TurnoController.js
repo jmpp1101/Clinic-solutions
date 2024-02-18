@@ -43,6 +43,11 @@ class TurnoController {
         return this.turnos;
     }
 
+    // Método para obtener los turnos de un médico específico
+    obtenerTurnosMedico(medico) {
+        return this.turnos.filter(turno => turno.medico.matricula === medico.matricula);
+    }
+
     // Método para guardar los turnos en el almacenamiento local
     guardarTurnosEnLocalStorage() {
         localStorage.setItem('turnos', JSON.stringify(this.turnos));
