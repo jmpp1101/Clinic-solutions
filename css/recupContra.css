@@ -40,6 +40,7 @@ body {
     padding-left: 40px;
     padding-top: 30px;
     margin-top: 30px;
+    padding-right: 10%;
 }
 
 #contForm{
@@ -64,6 +65,7 @@ body {
     /* padding: 2% 8% 2% 0; */
     font-size: 1.2rem;
     text-align: start;
+    margin-right: 10%;
 }
 
 /*2da parte*/
@@ -109,6 +111,7 @@ body {
 .formRecuperacion label,
 #datoUsuario{
     width: 50%;
+    margin-right: 5%;
 }
 
 
@@ -151,21 +154,21 @@ body {
     background-color: #f8f8f8;
 }
 .mensajeRecuperacion{
-    padding-top: 3%;
+    padding-top: 0;
     padding-left: 5%;
     padding-bottom: 30px;
+    margin: 5% 0 2% 0;
     
     width: 80%;
 
     font-size: 0.9rem;
     font-weight: bold;
     font-style: italic;
-
-    
+   
 }
 
 #volver_btn{
-    margin-left: 5%;
+    margin-left: 40%;
     font-size: 0.9rem;
     padding: 1%;
     text-decoration: none;
@@ -176,4 +179,112 @@ body {
     display: none;
     color: red;
     font-size: 0.8rem;
+}
+
+/**************Media queries para hacer la página responsive****************/
+@media only screen and (max-width: 768px) {
+    .contenedor {
+        width: 90%;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .parrafo > p {
+        font-size: 1rem;
+        margin-right: 10%;
+    }
+
+    .formRecuperacion label,
+    #datoUsuario {
+        width: 100%;
+    }
+
+
+    #datoUsuario {
+        width: 70%;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    #recuperar_btn{
+        width: 70%;
+        margin-top: 5%;
+        margin-right: 0px;
+        margin-left: 0;
+    }
+
+    .mensajeRecuperacion{
+        padding-top: 0;
+        padding-left: 7%;
+        padding-bottom: 30px;
+        margin: 5% 0 2% 0;       
+    }
+
+    #volver_btn {
+        width: 70%;
+        margin-top: 5%;
+        margin-right: 0px;
+        margin-left: 10%;
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+    .contenedor {
+        width: 100%;
+        
+    }
+
+    .title {
+        font-size: 1.2rem;
+        padding-right: 10%;
+      
+    }
+
+    .parrafo > p {
+        font-size: 0.9rem;
+        margin-right: 5%;
+    }
+
+    #datoUsuario {
+        width: 80%;
+        padding-right: 1px;
+        padding-left: 1px;
+    }
+
+    #formRec{
+        display: flex;
+        justify-content: center;
+        align-items: start;
+    }
+
+    #recuperar_btn{
+        width: 80%; 
+        min-width: min-content;
+        height: min-content;
+        margin-top: 5%;
+        margin-right: 0;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    #volver_btn {
+        width: 80%; 
+        min-width: min-content;
+        height: min-content;
+        margin-top: 5%;
+        margin-right: 0;
+        margin-left: 40px;
+        padding-left: 0;
+    }
+
+    
+    .mensajeRecuperacion{
+        padding-top: 0;
+        padding-left: 5%;
+        padding-bottom: 30px;
+        margin: 5% 0 2% 8%;       
+    }
 }
