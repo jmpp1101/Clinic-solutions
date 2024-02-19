@@ -1,11 +1,11 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
 
-body{
+body {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,21 +24,21 @@ body{
 
 
 /*General contenedor Registrarse*/
-.contenedor-infoyform{
+.contenedor-infoyform {
     display: flex;
     border-radius: 20px;
-    box-shadow: 0 15px 15px rgba(0,0,0, .1);
+    box-shadow: 0 15px 15px rgba(0, 0, 0, .1);
     height: 500px;
     width: 60%;
     margin: 10px;
-    border: solid thin rgba(0,0,0, .1);
+    border: solid thin rgba(0, 0, 0, .1);
 
     transition: all is ease;
 }
 
 /***********Lado izquierdo********************/
 /*General Registrarse*/
-.informacion{
+.informacion {
     width: 40%;
     display: flex;
     align-items: center;
@@ -48,7 +48,7 @@ body{
     border-bottom-left-radius: 20px;
 }
 
-.info-hijos{
+.info-hijos {
     width: 100%;
     padding: 0 30px;
 
@@ -58,17 +58,17 @@ body{
     align-content: center;
 }
 
-.info-hijos h2{
+.info-hijos h2 {
     font-size: 2.5rem;
     color: #333;
 }
 
-.info-hijos p{
+.info-hijos p {
     margin: 15px 0;
     color: #555;
 }
 
-.botones{
+.botones {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,7 +76,7 @@ body{
     width: 100%;
 }
 
-#registrarme_btn{
+#registrarme_btn {
     font-size: 0.9rem;
     text-decoration: none;
     margin: 2%;
@@ -87,7 +87,7 @@ body{
 
     background-color: #249c74;
     outline: none;
-    border: solid 2px #249c74; 
+    border: solid 2px #249c74;
     border-radius: 20px;
     padding: 10px 20px;
     color: white;
@@ -95,10 +95,10 @@ body{
     transition: background-color .3 ease;
 }
 
-#ingresar_btn{
+#ingresar_btn {
     background-color: transparent;
     outline: none;
-    border: solid 2px #999; 
+    border: solid 2px #999;
     border-radius: 20px;
     padding: 10px 20px;
     color: #333;
@@ -107,14 +107,14 @@ body{
 }
 
 /*Efecto Hover Botón Registrarse e Ingresar*/
-#registrarme_btn:hover{
+#registrarme_btn:hover {
     background-color: white;
     border: none;
     color: #5ea992;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
 }
 
-#ingresar_btn:hover{
+#ingresar_btn:hover {
     background-color: #999;
     border: none;
     color: #fff;
@@ -122,7 +122,7 @@ body{
 }
 
 /***********Lado derecho********************/
-.informacion-form{
+.informacion-form {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -134,27 +134,27 @@ body{
     border-bottom-right-radius: 20px;
 }
 
-.info-form-title{
+.info-form-title {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#ingresa{
+#ingresa {
     padding: 0 0 20px 0;
     font-size: 2rem;
 }
 
-.parrafosMostrar{
+.parrafosMostrar {
     width: 70%;
 }
 
-#parrafoMedico{
+#parrafoMedico {
     display: none;
 }
 
-.form{
+.form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -165,30 +165,31 @@ body{
 }
 
 /*Input Usuario y Contraseña*/
-.form label{
+.form label {
     margin-bottom: 15px;
 }
 
-.form label, .form input{
+.form label,
+.form input {
     width: 80%;
 }
 
 label>input[id="usuario"],
-label>input[id="contra"]{
+label>input[id="contra"] {
     padding: 0 10px;
     border-radius: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
 }
 
 label input[id="usuario"],
-label input[id="contra"]{
+label input[id="contra"] {
     padding: 0 10px;
     border-radius: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
 }
 
 /*Botones opción Paciente o Médico*/
-.perfil{
+.perfil {
     background-color: white;
     height: 10vh;
     width: 70%;
@@ -199,55 +200,112 @@ label input[id="contra"]{
     flex-direction: row;
     justify-content: center;
     align-content: center;
-    
+
     overflow: hidden;
 }
 
-input[type="radio"]{
+input[type="radio"] {
     display: none;
 }
 
-label[for="paciente"], label[for="medico"]{
+label[for="paciente"],
+label[for="medico"] {
     /* display: block; */
     padding-top: 3vh;
     height: 180px;
     width: 50%;
-    background: linear-gradient(
-        to bottom,
-        white 0, white 90px,
-        #249c74 90px, #249c74 180px
-    );
-    
+    background: linear-gradient(to bottom,
+            white 0, white 90px,
+            #249c74 90px, #249c74 180px);
+
     color: #5ea992;
     transition: 0.5s;
 }
 
-input:checked + label{
+input:checked+label {
     cursor: pointer;
     background-position: 0 -90px;
     color: white;
     transition: 0.7s;
 }
 
-label[for="paciente"]:hover, label[for="medico"]:hover{
+label[for="paciente"]:hover,
+label[for="medico"]:hover {
     cursor: pointer;
 }
 
 
 /*Botón recuperar contraseña*/
-#recupContra{
+#recupContra {
     font-size: 0.8rem;
 }
 
 /*Botón ingresar*/
-#ingresar_btn{
+#ingresar_btn {
     width: 10vw;
     margin: 20px 20px;
 }
 
 /*Error*/
-.error{
+.error {
     display: none;
     color: red;
     font-size: 0.8rem;
+}
+
+/*********************RESPONSIVE******************/
+@media only screen and (max-width: 768px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        height: min-content;
+    }
+
+    h2{
+        font-size: small;
+    }
+    .contenedor-infoyform {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+    }
+
+    .informacion {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+
+
+    .informacion-form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        padding-top: 5%;
+    }
+
+    #ingresar_btn{
+        min-width: fit-content;
+        height: min-content;
+    }
+
+    #medico,#paciente{
+        min-width: min-content;
+        height: min-content;
+    }
+
+    .botones{
+        padding-bottom: 5%;
+    }
 }
