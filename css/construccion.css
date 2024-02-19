@@ -1,0 +1,17 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #a6dcc9;
+}
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+p {
+    font-size: 1.1em;
+    margin-top: 0;
+}
